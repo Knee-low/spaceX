@@ -14,10 +14,3 @@ export const getStatusText = (
 export const getTimeAgo = (time: string) => {
   return dayjs(time).fromNow();
 };
-
-export const getLinks = (links) => {
-  return {
-    article: "",
-    youtube: "",
-  }
-}
