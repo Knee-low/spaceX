@@ -1,3 +1,8 @@
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
+
 export const getStatusText = (
   status: boolean | null
 ): { tagStatus: string; tagColor: "success" | "primary" | "error" } => {
@@ -5,3 +10,14 @@ export const getStatusText = (
   if (status === null) return { tagStatus: "upcoming", tagColor: "primary" };
   return { tagStatus: "failed", tagColor: "error" };
 };
+
+export const getTimeAgo = (time: string) => {
+  return dayjs(time).fromNow();
+};
+
+export const getLinks = (links) => {
+  return {
+    article: "",
+    youtube: "",
+  }
+}

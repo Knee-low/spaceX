@@ -2,10 +2,34 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useSpaceX } from "@/api/useSpaceX/useSpaceX";
 import { debounce } from "lodash";
 
+export interface LinkType {
+  patch: {
+    small: string;
+    large: string;
+  };
+  reddit: {
+    campaign: string;
+    launch: string;
+    media: string;
+    recovery: string;
+  };
+  flickr: {
+    small: string[];
+    original: string[];
+  };
+  presskit: string;
+  webcast: string;
+  article: string;
+  wikipedia: string;
+  youtube_id: string;
+}
 export interface LaunchType {
   id: string;
   name: string;
   success: boolean;
+  date_utc: string;
+  links: LinkType;
+  details: string;
 }
 
 export const useHooks = () => {

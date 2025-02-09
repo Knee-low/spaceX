@@ -14,6 +14,7 @@ export const PlaygroundForm = () => {
     onChangeInput,
   } = useHooks();
 
+  console.log(launches);
   return (
     <Box
       display="flex"
