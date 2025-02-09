@@ -8,5 +8,11 @@ interface Props {
 
 export const StatusTagChip: FC<Props> = ({ status }) => {
   const { tagStatus, tagColor } = useHooks({ status });
-  return <Chip sx={{ ml: 1 }} label={tagStatus} color={tagColor} />;
+  return (
+    <Chip
+      sx={{ ml: 1, borderRadius: 0.5 }}
+      label={tagStatus}
+      color={tagColor}
+    />
+  );
 };

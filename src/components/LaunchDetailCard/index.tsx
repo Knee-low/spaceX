@@ -55,7 +55,13 @@ export const LaunchDetailCard: FC<Props> = ({ launch, ref }) => {
                 ))}
             </Box>
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 2,
+              }}
+            >
               {detailsArray?.large ? (
                 <Box
                   component="img"
@@ -81,15 +87,36 @@ export const LaunchDetailCard: FC<Props> = ({ launch, ref }) => {
                 </Typography>
               )}
 
-              <Typography
-                sx={{
-                  fontSize: 12,
-                  fontStyle: "italic",
-                  color: "text.secondary",
-                }}
-              >
-                {details ?? "No details yet."}
-              </Typography>
+              {details ? (
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "100px",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      padding: "4px",
+                    }}
+                  >
+                    {details}
+                  </Box>
+                </Box>
+              ) : (
+                <Typography
+                  sx={{
+                    fontSize: 12,
+                    fontStyle: "italic",
+                    color: "text.secondary",
+                  }}
+                >
+                  {"No details yet."}
+                </Typography>
+              )}
             </Box>
           </Box>
         )}
